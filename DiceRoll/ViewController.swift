@@ -10,11 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var DiceLeft: UIImageView!
+    @IBOutlet weak var DiceRight: UIImageView!
+
+    @IBAction func RollButton(_ sender: UIButton) {
+        let Array = [ #imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix") ] //let means not changing the array, var means you want to change it
+        DiceLeft.image = Array.randomElement() //[Int.random(in: 0...5)]
+        DiceRight.image = Array.randomElement()
+        
     }
-
-
 }
+
 
